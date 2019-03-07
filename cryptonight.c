@@ -149,8 +149,8 @@ static void (* const extra_hashes[4])(const void *, size_t, char *) = {
 extern int aesb_single_round(const uint8_t *in, uint8_t*out, const uint8_t *expandedKey);
 extern int aesb_pseudo_round(const uint8_t *in, uint8_t *out, const uint8_t *expandedKey);
 
-static inline size_t e2i(const uint8_t* a, size_t mask) {
-    return (*((uint64_t*) a) / AES_BLOCK_SIZE) & mask;
+static inline size_t e2i(const uint8_t* a) {
+    return (*((uint64_t*) a) / AES_BLOCK_SIZE) & (CN_AES_INIT - 1);
 }
 
 static void mul(const uint8_t* a, const uint8_t* b, uint8_t* res) {
