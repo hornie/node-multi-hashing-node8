@@ -1,3 +1,5 @@
+Broken and outdated. Plus, switching to moneroOcean hashing things.
+
 node-multi-hashing
 ===============
 
